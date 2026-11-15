@@ -1,0 +1,21 @@
+import type { Exercise, Flashcard, Question } from '../../core/content';
+const r = String.raw;
+export const EXTRA_EXERCISES: Exercise[] = [
+  { id: 'exo-1.3.a', chapter: '1', level: 2, origin: 'ajoutee', uses: ['def-1.3.2'], statement: r`Soit $A$ un fermé de $(E,\tau)$. Montrer que tout fermé de $(A,\tau_A)$ est un fermé de $E$.`, hint: r`Un fermé de $A$ est le complémentaire dans $A$ d'un ouvert $O\cap A$.`,
+    solution: [r`Soit $F$ un fermé de $(A,\tau_A)$ : $A\setminus F=O\cap A$ avec $O\in\tau$.`, r`Alors $F=A\setminus(O\cap A)=A\cap O^c$.`, r`$A$ est fermé dans $E$ et $O^c$ est fermé dans $E$ : leur intersection $F$ est un fermé de $E$. $\blacksquare$`] },
+  { id: 'exo-1.3.b', chapter: '1', level: 2, origin: 'ajoutee', uses: ['def-1.3.7'], statement: r`Montrer que la surjection canonique $q:E\to E/\mathcal R$ est continue, et que $\widehat\tau$ est la topologie la plus fine sur $E/\mathcal R$ rendant $q$ continue.`, hint: r`Pour la deuxième partie, prends une topologie $\tau''$ rendant $q$ continue et compare-la à $\widehat\tau$.`,
+    solution: [r`Si $U\in\widehat\tau$, alors $q^{-1}(U)\in\tau$ par définition : $q$ est continue.`, r`Soit $\tau''$ une topologie sur $E/\mathcal R$ rendant $q$ continue et $U\in\tau''$.`, r`Alors $q^{-1}(U)\in\tau$, donc $U\in\widehat\tau$. Ainsi $\tau''\subset\widehat\tau$ : $\widehat\tau$ est la plus fine. $\blacksquare$`] },
+  { id: 'exo-1.4.9b', chapter: '1', level: 3, origin: 'ajoutee', uses: ['def-1.4.8'], statement: r`Soit $f:(E,\tau)\to(F,\tau')$ une application bijective. Montrer que $f$ est un homéomorphisme si et seulement si l'application $\tau\to\tau'$, $U\mapsto f(U)$, est bijective (deuxième question de l'exercice 1.4.9).`, hint: r`Remarque que $f(U)=(f^{-1})^{-1}(U)$ et que $U=f^{-1}(f(U))$.`,
+    solution: [r`($\Rightarrow$) Si $f$ est un homéomorphisme, $f(U)=(f^{-1})^{-1}(U)$ est ouvert pour $U\in\tau$ : l'application $\Phi:U\mapsto f(U)$ va de $\tau$ dans $\tau'$.`, r`$\Phi$ est injective : $f$ injective donne $U=f^{-1}(f(U))$. $\Phi$ est surjective : pour $V\in\tau'$, $U=f^{-1}(V)\in\tau$ ($f$ continue) et $f(U)=V$ ($f$ surjective).`, r`($\Leftarrow$) Si $\Phi$ est bijective de $\tau$ sur $\tau'$, alors $f(U)=(f^{-1})^{-1}(U)$ est ouvert pour tout ouvert $U$ : $f^{-1}$ est continue.`, r`Soit $V\in\tau'$. Par surjectivité de $\Phi$, $V=f(U)$ avec $U\in\tau$, donc $f^{-1}(V)=U\in\tau$ car $f$ est bijective : $f$ est continue. $\blacksquare$`, r`Remarque : l'hypothèse « $f$ bijective » est nécessaire. Si $E=\{a,b\}$ est muni de la topologie grossière et $F=\{c\}$ de sa topologie $\{\emptyset,F\}$, l'application constante $f$ induit une bijection $\emptyset\mapsto\emptyset$, $E\mapsto F$ de $\tau$ sur $\tau'$, mais n'est pas injective.`] },
+];
+export const EXTRA_CARDS: Flashcard[] = [
+  { id: 'fc-f29', front: 'Voisinage de $a$ dans $A$ (induite)', back: r`$V=W\cap A$ avec $W$ voisinage de $a$ dans $E$.` },
+  { id: 'fc-f30', front: 'Ouvert de $\\tau_A$ : ouvert de $E$ ?', back: r`Pas en général : $]0,1]$ est ouvert dans $[-1,1]$ mais pas dans $\mathbb R$.` },
+  { id: 'fc-f31', front: 'Topologie quotient : plus fine ou plus grossière ?', back: r`C'est la plus fine rendant la surjection canonique $q$ continue.` },
+  { id: 'fc-f32', front: 'Pavé ouvert de la topologie produit', back: r`$u_1\times\cdots\times u_n$ avec $u_i\in\tau_i$ ; ils forment une base.` },
+];
+export const EXTRA_QUIZ: Question[] = [
+  { id: 'q-29', q: r`Dans $A=[-1,1]$ (topologie induite de $\mathbb R$), l'ensemble $]0,1]$ est :`, options: ['ouvert dans A', 'fermé dans A uniquement', 'ni ouvert ni fermé dans A', 'vide'], answer: 0, explain: r`$]0,1]=A\cap]0,+\infty[$ (exemple 1.3.4).` },
+  { id: 'q-30', q: r`Dans $(E,\tau)$, soit $A\subset E$. Les ouverts de $(A,\tau_A)$ sont :`, options: [r`les $O\cap A$ avec $O\in\tau$`, r`les ouverts de $E$ contenus dans $A$`, r`les $O\cup A$ avec $O\in\tau$`, r`les fermés de $E$ contenus dans $A$`], answer: 0, explain: 'Définition de la topologie induite (1.3.1).' },
+  { id: 'q-31', q: r`Si $f:E\to F$ est continue et $F$ muni de la topologie grossière, alors :`, options: ['f est toujours continue', 'f est constante', 'f est bijective', 'E est grossier'], answer: 0, explain: r`Les seuls ouverts de $F$ sont $\emptyset$ et $F$, et $f^{-1}(\emptyset)=\emptyset$, $f^{-1}(F)=E$ sont ouverts.` },
+];
