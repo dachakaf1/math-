@@ -1,13 +1,13 @@
 import type { ModuleId, ModuleManifest } from './types';
-
 import type { ModuleContent } from './content';
+
 import { topologie } from '../modules/topologie';
 import { algebre } from '../modules/algebre';
-const vide: ModuleContent = { chapters: [], exercises: [], flashcards: [], quiz: [] };
-export const CONTENT: Record<string, ModuleContent> = { topologie, mesure: vide, algebre };
+import { mesure } from '../modules/mesure';
+export const CONTENT: Record<string, ModuleContent> = { topologie, mesure, algebre };
 export const MODULES: ModuleManifest[] = [
   { id: 'topologie', title: 'Topologie', tagline: 'Ouverts, voisinages, compacts : voir l’espace se déformer.', status: 'actif', chapters: topologie.chapters },
-  { id: 'mesure', title: 'Mesure et intégration', tagline: 'Tribus, mesures, escaliers qui montent vers f.', status: 'bientot', chapters: [] },
+  { id: 'mesure', title: 'Mesure et intégration', tagline: 'Tribus, mesures, escaliers qui montent vers f.', status: 'actif', chapters: mesure.chapters },
   { id: 'algebre', title: 'Structures algébriques', tagline: 'Groupes, quotients, anneaux : la symétrie en clair.', status: 'actif', chapters: algebre.chapters },
 ];
 export const getModule = (id: string): ModuleManifest | undefined => MODULES.find((m) => m.id === id);

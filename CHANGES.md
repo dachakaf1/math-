@@ -1,4 +1,9 @@
 # Journal des changements
+## Module Mesure et intégration — chapitres 1 et 2
+- Module activé : 2 chapitres (tribus ; mesures positives), 29 notions, 18 démonstrations, 11 exercices corrigés, 12 cartes, 8 questions de QCM.
+- Source : « Théorie générale de la mesure » (cours détaillé) ; les preuves sont celles du PDF. Marquées « démonstration ajoutée » (à relire) : intersection de tribus, additivité finie, fonction de répartition (ii et iii) ; marquées « admise dans le cours » : existence de λ, réciproque de Lebesgue–Stieltjes.
+- Exercices : 2 du PDF (image réciproque, image directe) + 9 nouveaux marqués « à relire » (réunion de tribus, tribu trace, autre générateur de B(R), Dirac, différence, dénombrables, finitude, combinaison de Dirac, Borel–Cantelli).
+- Reste à faire : chapitres 3 (fonctions mesurables) et 4 (intégrale, Fatou, convergence dominée), schémas animés, labos, jeux.
 ## Démonstrations à compléter
 - Bouton « S’entraîner » sur chaque démonstration (34 preuves) : (1) choisir l’étape suivante parmi 3 propositions, (2) remettre les étapes dans l’ordre (boutons ↑ ↓).
 - Leurres générés automatiquement : étapes à venir de la même preuve, puis étapes d’autres preuves ; mélanges reproductibles.
